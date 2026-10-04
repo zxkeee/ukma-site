@@ -1,0 +1,16 @@
+{% extends "faculty/base.html" %}
+
+{% block content %}
+    <h1>Кафедри</h1>
+
+    {% for dep in departments %}
+        <h2>{{ dep.name }}</h2>
+        <p>Завідувач: {{ dep.head }}</p>
+        <p>Спеціальності:</p>
+        <ul>
+            {% for program in dep.programs.all %}
+                <li>{{ program }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
