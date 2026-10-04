@@ -1,0 +1,13 @@
+{% extends "faculty/base.html" %}
+
+{% block content %}
+
+    <h1>{{ info.name }}</h1>
+    <p>{{ info.description }}</p>
+    <p>Декан: {{ info.dean }}</p>
+    <p>Зам. Декана: {{ info.deputy_dean }}</p>
+    <p>Адреса: {{ info.address }}</p>
+    <p>Телефон: {{ info.phone }}</p>
+    <p>Ел. пошта: {{ info.email }}</p>
+
+{% endblock %}
