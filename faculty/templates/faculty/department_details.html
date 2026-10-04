@@ -1,0 +1,22 @@
+{% extends "faculty/base.html" %}
+
+{% block content %}
+    <h1>{{ department.name }}</h1>
+    <p>Завідувач: {{ department.head }}</p>
+
+    <h2>Спеціальності</h2>
+    <ul>
+        {% for program in department.programs.all %}
+            <li>{{ program }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Викладачі</h2>
+    <ul>
+        {% for teacher in department.teachers.all %}
+            <li>{{ teacher.name }} — {{ teacher.position }}, {{ teacher.degree }}</li>
+        {% empty %}
+            <li>Викладачів ще не додано</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

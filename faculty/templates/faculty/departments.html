@@ -4,7 +4,7 @@
     <h1>Кафедри</h1>
 
     {% for dep in departments %}
-        <h2>{{ dep.name }}</h2>
+        <h2><a href="{% url 'faculty:departments_details' dep.id %}">{{ dep.name }}</a></h2>
         <p>Завідувач: {{ dep.head }}</p>
         <p>Спеціальності:</p>
         <ul>
