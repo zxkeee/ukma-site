@@ -10,9 +10,10 @@
 {% block content %}
     {% for program in programs %}
         <div class="row">
-            <h2>{{ program.university }}</h2>
+            <h2>{{ program.name }}</h2>
             <div>
                 <p>{{ program.description }}</p>
+                <p class="muted">Країна: {{ program.country }}</p>
                 <p class="muted">Мови навчання: {{ program.languages }}</p>
                 <p class="muted">Кількість місць: {{ program.places }}</p>
             </div>

@@ -5,7 +5,7 @@ from exchange.models import ExchangeProgram
 # Register your models here.
 
 class ExchangeProgramAdmin(admin.ModelAdmin):
-    list_display = ["university", "languages", "places", "deadline"]
+    list_display = ["name", "country", "languages", "places", "deadline"]
 
 
 admin.site.register(ExchangeProgram, ExchangeProgramAdmin)
