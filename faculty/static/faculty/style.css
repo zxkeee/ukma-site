@@ -34,12 +34,9 @@ a {
     text-decoration: none;
 }
 
-.logo-letter {
-    font-family: 'Forum', serif;
-    font-size: 80px;
-    line-height: 1;
-    color: #0046de;
-    margin-right: 24px;
+.logo-img {
+    height: 64px;
+    margin-right: 20px;
 }
 
 .logo-text {
@@ -88,6 +85,7 @@ a {
     font-size: 15px;
     font-weight: bold;
     text-decoration: none;
+    border-radius: 6px;
 }
 
 .button:hover {
@@ -95,7 +93,7 @@ a {
 }
 
 .hero {
-    background: #1a1a1a;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero.jpg') center / cover;git add .
     color: #ccc;
     text-align: center;
     padding: 110px 20px;
