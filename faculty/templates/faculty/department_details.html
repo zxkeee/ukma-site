@@ -1,22 +1,35 @@
 {% extends "faculty/base.html" %}
 
-{% block content %}
-    <h1>{{ department.name }}</h1>
-    <p>Завідувач: {{ department.head }}</p>
+{% block hero %}
+    <div class="page-title">
+        <h1>{{ department.name }}</h1>
+        <p>Завідувач: {{ department.head }}</p>
+    </div>
+{% endblock %}
 
+{% block content %}
     <h2>Спеціальності</h2>
-    <ul>
+    <ul class="tags">
         {% for program in department.programs.all %}
-            <li>{{ program }}</li>
+            <li><a href="{% url 'faculty:programs_details' program.id %}">{{ program }}</a></li>
         {% endfor %}
     </ul>
 
     <h2>Викладачі</h2>
-    <ul>
+    <table>
+        <tr>
+            <th>Ім'я</th>
+            <th>Посада</th>
+            <th>Науковий ступінь</th>
+        </tr>
         {% for teacher in department.teachers.all %}
-            <li>{{ teacher.name }} — {{ teacher.position }}, {{ teacher.degree }}</li>
+            <tr>
+                <td>{{ teacher.name }}</td>
+                <td>{{ teacher.position }}</td>
+                <td>{{ teacher.degree }}</td>
+            </tr>
         {% empty %}
-            <li>Викладачів ще не додано</li>
+            <tr><td colspan="3">Викладачів ще не додано.</td></tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock %}

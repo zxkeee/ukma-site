@@ -1,20 +1,29 @@
 {% extends "faculty/base.html" %}
 
+{% block hero %}
+    <div class="page-title">
+        <h1>{{ program.name }}</h1>
+        <p>Код спеціальності: {{ program.code }}</p>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1>{{ program.name }}</h1>
-    <p>Код: {{ program.code }}</p>
-    <p>Випускова кафедра:
+    <p class="muted">Випускова кафедра:
         <a href="{% url 'faculty:departments_details' program.department.id %}">{{ program.department }}</a>
     </p>
 
     {{ program.description|linebreaks }}
 
-    <p>Координатор набору: {{ program.coordinator_name }}, {{ program.coordinator_contact }}</p>
-
     <h2>Дисципліни</h2>
-    <ul>
+    <ul class="tags">
         {% for discipline in program.disciplines.all %}
             <li>{{ discipline }}</li>
         {% endfor %}
     </ul>
+
+    <div class="band">
+        <h2>Координатор набору</h2>
+        <p>{{ program.coordinator_name }}</p>
+        <p class="muted">{{ program.coordinator_contact }}</p>
+    </div>
 {% endblock %}

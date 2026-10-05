@@ -24,3 +24,7 @@ def programs_details(request, id):
     program = Program.objects.get(pk = id)
     return render(request, 'faculty/program_details.html', {'program': program})
 
+def index(request):
+    info = FacultyInfo.objects.first()
+    progs = Program.objects.all()
+    return render(request, 'faculty/index.html', {'info': info, 'programs': progs})
