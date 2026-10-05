@@ -93,8 +93,8 @@ a {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero.jpg') center / cover;git add .
-    color: #ccc;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero.jpg') center / cover;
+    color: white;
     text-align: center;
     padding: 110px 20px;
 }
