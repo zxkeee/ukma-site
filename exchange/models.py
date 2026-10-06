@@ -6,8 +6,7 @@ class ExchangeProgram(models.Model):
     name = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
     languages = models.CharField(max_length=200)
-    places = models.CharField(max_length=50)
-    places_count = models.IntegerField(null=True)
+    places = models.IntegerField()
     deadline = models.DateField()
     description = models.TextField()
 
