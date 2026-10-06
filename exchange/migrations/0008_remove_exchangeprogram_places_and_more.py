@@ -10,6 +10,11 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.AlterField(
+            model_name='exchangeprogram',
+            name='places',
+            field=models.CharField(max_length=50, default=''),
+        ),
         migrations.RemoveField(
             model_name='exchangeprogram',
             name='places',

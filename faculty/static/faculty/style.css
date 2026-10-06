@@ -331,3 +331,13 @@ th {
         font-size: 40px;
     }
 }
+
+.status-open {
+    color: #1a7f37;
+    font-weight: bold;
+}
+
+.status-closed {
+    color: #b42318;
+    font-weight: bold;
+}

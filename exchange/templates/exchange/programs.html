@@ -20,6 +20,11 @@
             <div>
                 <p class="muted">Дедлайн подачі</p>
                 <p>{{ program.deadline }}</p>
+                                {% if program.deadline >= today %}
+                    <p class="status-open">Прийом триває</p>
+                {% else %}
+                    <p class="status-closed">Прийом завершено</p>
+                {% endif %}
             </div>
         </div>
     {% empty %}
