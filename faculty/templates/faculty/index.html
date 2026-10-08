@@ -1,0 +1,42 @@
+{% extends "faculty/base.html" %}
+
+{% block hero %}
+    <div class="hero">
+        <h1>{{ info.name }}</h1>
+        <p>Готуємо економістів, фінансистів, маркетологів і менеджерів з 2000 року</p>
+        <a class="pill-outline" href="{% url 'faculty:programs' %}">Спеціальності</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <h2>Про факультет</h2>
+    {{ info.description|linebreaks }}
+
+    <div class="band">
+        <h2>Перелік спеціальностей</h2>
+        <ul class="tags">
+            {% for program in programs %}
+                <li><a href="{% url 'faculty:programs_details' program.id %}">{{ program }}</a></li>
+            {% endfor %}
+        </ul>
+        <a class="pill" href="{% url 'faculty:programs' %}">Детальніше</a>
+    </div>
+
+    <h2>Контакти</h2>
+    <div class="cards">
+        <div class="card">
+            <p class="muted">Декан</p>
+            <p>{{ info.dean }}</p>
+            <p class="muted">Заступник декана</p>
+            <p>{{ info.deputy_dean }}</p>
+        </div>
+        <div class="card">
+            <p class="muted">Адреса</p>
+            <p>{{ info.address }}</p>
+            <p class="muted">Телефон</p>
+            <p>{{ info.phone }}</p>
+            <p class="muted">Email</p>
+            <p><a href="mailto:{{ info.email }}">{{ info.email }}</a></p>
+        </div>
+    </div>
+{% endblock %}

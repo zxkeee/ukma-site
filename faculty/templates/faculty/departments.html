@@ -1,0 +1,26 @@
+{% extends "faculty/base.html" %}
+
+{% block hero %}
+    <div class="page-title">
+        <h1>Кафедри факультету</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% for dep in departments %}
+        <div class="row">
+            <h2><a href="{% url 'faculty:departments_details' dep.id %}">{{ dep.name }}</a></h2>
+            <div>
+                <p>Завідувач: {{ dep.head }}</p>
+                <ul class="tags">
+                    {% for program in dep.programs.all %}
+                        <li>{{ program }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <a class="pill" href="{% url 'faculty:departments_details' dep.id %}">Деталі</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "faculty/base.html" %}
+
+{% block hero %}
+    <div class="page-title">
+        <h1>Програми обміну</h1>
+        <p>Програми академічного обміну факультету економічних наук з університетами-партнерами</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% for program in programs %}
+        <div class="row">
+            <h2>{{ program.name }}</h2>
+            <div>
+                <p>{{ program.description }}</p>
+                <p class="muted">Країна: {{ program.country }}</p>
+                <p class="muted">Мови навчання: {{ program.languages }}</p>
+                <p class="muted">Кількість місць: {{ program.places }}</p>
+            </div>
+            <div>
+                <p class="muted">Дедлайн подачі</p>
+                <p>{{ program.deadline }}</p>
+                                {% if program.deadline >= today %}
+                    <p class="status-open">Прийом триває</p>
+                {% else %}
+                    <p class="status-closed">Прийом завершено</p>
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <p>Програм обміну поки немає.</p>
+    {% endfor %}
+{% endblock %}

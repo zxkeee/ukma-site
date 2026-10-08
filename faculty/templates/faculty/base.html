@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ФЕН НаУКМА</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&display=swap">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'faculty/style.css' %}">
+</head>
+<body>
+<div class="header">
+    <a class="logo" href="{% url 'faculty:index' %}">
+        <img class="logo-img" src="{% static 'faculty/logo.svg' %}" alt="Логотип НаУКМА">
+        <span class="logo-text">
+            <span class="logo-title">Факультет Економічних Наук</span>
+            <span class="logo-subtitle">Києво-Могилянська<br>Академія</span>
+        </span>
+    </a>
+    <div class="menu">
+        <a class="menu-item" href="{% url 'faculty:index' %}">Головна</a>
+        <a class="menu-item" href="{% url 'faculty:departments' %}">Кафедри</a>
+        <a class="menu-item" href="{% url 'faculty:programs' %}">Спеціальності</a>
+        <a class="menu-item" href="{% url 'exchange:programs' %}">Обмін</a>
+        <a class="button" href="https://vstup.ukma.edu.ua/">Вступ</a>
+    </div>
+</div>
+
+{% block hero %}
+{% endblock %}
+
+<main class="content">
+{% block content %}
+{% endblock %}
+</main>
+
+<div class="footer">
+    <div>
+        <h3>Напишіть нам</h3>
+        <p>Тел.: (044) 425 60 42</p>
+        <p>Факс: (044) 425 77 37</p>
+    </div>
+    <div>
+        <h3>Адреса</h3>
+        <p>вул. Г. Сковороди, 2</p>
+        <p>корпус 6, кімн. 406</p>
+    </div>
+    <div>
+        <h3>Розділи</h3>
+        <a href="{% url 'faculty:index' %}">Головна</a>
+        <a href="{% url 'faculty:departments' %}">Кафедри</a>
+        <a href="{% url 'faculty:programs' %}">Спеціальності</a>
+    </div>
+</div>
+</body>
+</html>

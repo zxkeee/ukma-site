@@ -1,0 +1,26 @@
+{% extends "faculty/base.html" %}
+
+{% block hero %}
+    <div class="page-title">
+        <h1>Спеціальності</h1>
+        <p>На факультеті економічних наук можна здобути ступінь бакалавра, магістра та доктора філософії.</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% for program in programs %}
+        <div class="row">
+            <div>
+                <span class="code">{{ program.code }}</span>
+                <h2><a href="{% url 'faculty:programs_details' program.id %}">{{ program.name }}</a></h2>
+            </div>
+            <div>
+                <p>{{ program.description|truncatewords:50 }}</p>
+                <p class="muted">Координатор набору: {{ program.coordinator_name }}, {{ program.coordinator_contact }}</p>
+            </div>
+            <div>
+                <a class="pill" href="{% url 'faculty:programs_details' program.id %}">Деталі</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
